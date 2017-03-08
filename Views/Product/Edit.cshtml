@@ -1,4 +1,4 @@
-﻿@model List<Inventory.Models.Supplier>
+﻿@model Inventory.Models.Product
 <body class="nav-md">
 
     @{
@@ -25,26 +25,26 @@
                         <div class="col-md-12 col-sm-12 col-xs-12" style="background-color: #fff">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h3>Create Product <small></small></h3>
+                                    <h3>Edit Product <small></small></h3>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
                                     <br />
 
 
-                                    <form id="demo-form2" action="~/Product/Create" method="post" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
-                                        
+                                    <form id="demo-form2" action="~/Product/Edit/@Model.Id" method="post" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+
 
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Custom Label / SKU <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="sku_label" required>
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="sku_label" required value="@Model.sku">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Item Title <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="title" required>
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="title" required value="@Model.item_title">
                                             </div>
                                         </div>
 
@@ -52,61 +52,61 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Normal Price <span class="required">*</span></label>
                                             <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
-                                                <input id="NormalPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" required>
+                                                <input id="NormalPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" required value="@Model.normal_price">
                                             </div>
                                             <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
                                             <div class="col-md-2 col-sm-3 col-xs-12">
-                                                <input id="NormalTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="normal_vat">
+                                                <input id="NormalTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="normal_vat" value="@Model.normal_vat">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Trade Price</label>
                                             <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
-                                                <input id="TradePrice" style="text-align:center" onkeyup="javascript:Add();" class=" form-control col-md-7 col-xs-12" type="text" name="trade_price" required>
+                                                <input id="TradePrice" style="text-align:center" onkeyup="javascript:Add();" class=" form-control col-md-7 col-xs-12" type="text" name="trade_price" required value="@Model.trade_price">
                                             </div>
                                             <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold; "> +VAT= </label>
                                             <div class="col-md-2 col-sm-3 col-xs-12">
-                                                <input id="TradeTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="trade_vat">
+                                                <input id="TradeTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="trade_vat" value="@Model.trade_vat">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Premium Price <span class="required">*</span></label>
                                             <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
-                                                <input id="PremiumPrice" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="premium_price" required style="text-align:center">
+                                                <input id="PremiumPrice" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="premium_price" required style="text-align:center" value="@Model.premium_price">
                                             </div>
                                             <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
                                             <div class="col-md-2 col-sm-3 col-xs-12">
-                                                <input id="PremiumTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="premium_vat">
+                                                <input id="PremiumTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="premium_vat" value="@Model.premium_vat">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Other Price <span class="required">*</span></label>
                                             <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
-                                                <input id="OtherPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="other_price" required>
+                                                <input id="OtherPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="other_price" required value="@Model.other_price">
                                             </div>
                                             <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
                                             <div class="col-md-2 col-sm-3 col-xs-12">
-                                                <input id="OtherTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="other_vat">
+                                                <input id="OtherTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="other_vat" value="@Model.other_vat">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Quantity </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="quantity">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="quantity" value="@Model.quantity">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Warn Level </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="warn_level">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="warn_level" value="@Model.warn_level">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Barcode </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="barcode">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="barcode" value="@Model.barcode">
                                             </div>
                                         </div>
 
@@ -115,8 +115,8 @@
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Supplier Name </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <select name="supplier_name" required class="form-control chzn-select col-md-7 col-xs-12">
-                                                    <option value="">Please select any </option>
-                                                    @foreach (var v in Model)
+                                                    <option value="@Model.Supplier.Id">@Model.Supplier.account_contact_name</option>
+                                                    @foreach (var v in ViewBag.Supplier)
                                                     {
                                                         <option value="@v.Id">@v.sales_contact_name</option>
                                                     }
@@ -128,7 +128,7 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Supplier Code <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="supplier_code" required>
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="supplier_code">
                                             </div>
                                         </div>
 
@@ -138,7 +138,7 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Cost Price </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="cost">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="cost" value="@Model.cost">
                                             </div>
                                         </div>
 
@@ -147,7 +147,7 @@
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Categories </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12" style="display:inline">
                                                 <select name="categoryname" required class="form-control chzn-select col-md-7 col-xs-12">
-                                                    <option value="">Please select any </option>
+                                                    <option value="@Model.Category.Id">@Model.Category.category_name</option>
                                                     @foreach (var v in ViewBag.Categories)
                                                     {
                                                         <option value="@v.Id">@v.category_name</option>
@@ -164,7 +164,7 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Courier Type </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="courier_type">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="courier_type" value="@Model.courier_type">
                                             </div>
                                         </div>
 
@@ -172,7 +172,7 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Tax Type </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="tax_type">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="tax_type" value="@Model.tax_type">
                                             </div>
                                         </div>
 
@@ -181,14 +181,14 @@
                                         <div class="form-group">
                                             <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Note </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="notes">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="notes" value="@Model.note">
                                             </div>
                                         </div>
                                         <div>
                                             <div class="col-md-3 col-sm-6 col-xs-12 "></div>
                                             <div class="col-md-3 col-sm-6 col-xs-12 ">
 
-                                                <input type="file" name="file" id="file" /> <br />
+                                                <input type="file" name="file" id="file" value="@Model.product_image" /> <br />
 
                                                 @*<img src="" width="40" height="40" />*@
 
@@ -199,7 +199,7 @@
                                         </br>
                                         <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-3">
 
-                                            <input type="submit" value="Add Product" class="btn btn-success" />
+                                            <input type="submit" value="Update" class="btn btn-success" />
                                         </div>
                                     </form>
 

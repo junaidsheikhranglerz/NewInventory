@@ -28,9 +28,9 @@
                     <!-- /main charts -->
                     <!-- Dashboard content -->
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="background:#FFF">
                             <div class="x_title">
-                                <h3>New Supplier <small></small></h3>
+                                <h3>List Products <small></small></h3>
                                 <div class="clearfix"></div>
                             </div>
 
@@ -60,19 +60,19 @@
                                             {
                                                 <tr>
                                                     <td>
-                                                            <div class="media-left media-middle">
-                                                                <a href="#"><img src="~/images/@v.product_image" class="img-circle img-xs" alt=""></a>
-                                                            </div>
-                                                            @*<div class="media-left">
-                                                                    <div class=""><a href="#" class="text-default text-semibold">Facebook</a></div>
-                                                                </div>*@
-                                                        </td>
+                                                        <div class="media-left media-middle">
+                                                            <a href="#"><img src="~/images/@v.product_image" class="img-circle img-xs" alt=""></a>
+                                                        </div>
+                                                        @*<div class="media-left">
+                                            <div class=""><a href="#" class="text-default text-semibold">Facebook</a></div>
+                                        </div>*@
+                                                    </td>
                                                     <td>@v.sku</td>
                                                     <td>@v.item_title</td>
                                                     <td>@v.quantity</td>
                                                     <td><span class="">@v.barcode</span></td>
                                                     <td><span class="">@v.cost</span></td>
-                                                    
+
 
                                                     @if (@v.is_active == 1)
                                                     {
@@ -88,9 +88,9 @@
                                                             <li class="dropdown">
                                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
                                                                 <ul class="dropdown-menu dropdown-menu-right">
-                                                                    <li><a href="~/Product/Edit/@v.Id"><i class="icon-file-stats"></i> View </a></li>
                                                                     <li><a href="~/Product/Edit/@v.Id"><i class="icon-file-text2"></i> Edit </a></li>
                                                                     <li><a href="~/Product/Delete/@v.Id"><i class="icon-file-locked"></i> Disable </a></li>
+                                                                    <li><a href="~/Product/Active/@v.Id"><i class="icon-file-stats"></i> Active </a></li>
                                                                 </ul>
                                                             </li>
                                                         </ul>
@@ -107,80 +107,80 @@
                             <!-- /marketing campaigns -->
                             <!-- Quick stats boxes -->
                             @*<div class="row">
-                                    <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                                        <!-- Members online -->
-                                        <div class="panel bg-teal-400">
-                                            <div class="panel-body">
-                                                <div class="heading-elements">
-                                                    <span class="heading-text badge bg-teal-800">+53,6%</span>
-                                                </div>
+                    <!-- Members online -->
+                    <div class="panel bg-teal-400">
+                        <div class="panel-body">
+                            <div class="heading-elements">
+                                <span class="heading-text badge bg-teal-800">+53,6%</span>
+                            </div>
 
-                                                <h3 class="no-margin">3,450</h3>
-                                                Members online
-                                                <div class="text-muted text-size-small">489 avg</div>
-                                            </div>
+                            <h3 class="no-margin">3,450</h3>
+                            Members online
+                            <div class="text-muted text-size-small">489 avg</div>
+                        </div>
 
-                                            <div class="container-fluid">
-                                                <div id="members-online"></div>
-                                            </div>
-                                        </div>
-                                        <!-- /members online -->
+                        <div class="container-fluid">
+                            <div id="members-online"></div>
+                        </div>
+                    </div>
+                    <!-- /members online -->
 
-                                    </div>
+                </div>
 
-                                    <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                                        <!-- Current server load -->
-                                        <div class="panel bg-pink-400">
-                                            <div class="panel-body">
-                                                <div class="heading-elements">
-                                                    <ul class="icons-list">
-                                                        <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                                <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
-                                                                <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                                                <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
-                                                                <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                    <!-- Current server load -->
+                    <div class="panel bg-pink-400">
+                        <div class="panel-body">
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
+                                            <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
+                                            <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
+                                            <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                                <h3 class="no-margin">49.4%</h3>
-                                                Current server load
-                                                <div class="text-muted text-size-small">34.6% avg</div>
-                                            </div>
+                            <h3 class="no-margin">49.4%</h3>
+                            Current server load
+                            <div class="text-muted text-size-small">34.6% avg</div>
+                        </div>
 
-                                            <div id="server-load"></div>
-                                        </div>
-                                        <!-- /current server load -->
+                        <div id="server-load"></div>
+                    </div>
+                    <!-- /current server load -->
 
-                                    </div>
+                </div>
 
-                                    <div class="col-lg-4">
+                <div class="col-lg-4">
 
-                                        <!-- Today's revenue -->
-                                        <div class="panel bg-blue-400">
-                                            <div class="panel-body">
-                                                <div class="heading-elements">
-                                                    <ul class="icons-list">
-                                                        <li><a data-action="reload"></a></li>
-                                                    </ul>
-                                                </div>
+                    <!-- Today's revenue -->
+                    <div class="panel bg-blue-400">
+                        <div class="panel-body">
+                            <div class="heading-elements">
+                                <ul class="icons-list">
+                                    <li><a data-action="reload"></a></li>
+                                </ul>
+                            </div>
 
-                                                <h3 class="no-margin">$18,390</h3>
-                                                Today's revenue
-                                                <div class="text-muted text-size-small">$37,578 avg</div>
-                                            </div>
+                            <h3 class="no-margin">$18,390</h3>
+                            Today's revenue
+                            <div class="text-muted text-size-small">$37,578 avg</div>
+                        </div>
 
-                                            <div id="today-revenue"></div>
-                                        </div>
-                                        <!-- /today's revenue -->
+                        <div id="today-revenue"></div>
+                    </div>
+                    <!-- /today's revenue -->
 
-                                    </div>
-                                </div>*@
+                </div>
+            </div>*@
                             <!-- /quick stats boxes -->
 
 
