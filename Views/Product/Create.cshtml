@@ -1,0 +1,286 @@
+﻿@model List<Inventory.Models.Supplier>
+<body class="nav-md">
+
+    @{
+        Html.RenderPartial("_PartialTop");
+    }
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            @{
+                Html.RenderPartial("_PartialSideNavigation");
+            }
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="background-color: #fff">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h3>New Supplier <small></small></h3>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <br />
+
+
+                                    <form id="demo-form2" action="~/Product/Create" method="post" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+                                        
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Custom Label / SKU <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="sku_label" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Item Title <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="title" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Normal Price <span class="required">*</span></label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
+                                                <input id="NormalPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" required>
+                                            </div>
+                                            <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12">
+                                                <input id="NormalTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="normal_vat">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Trade Price</label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
+                                                <input id="TradePrice" style="text-align:center" onkeyup="javascript:Add();" class=" form-control col-md-7 col-xs-12" type="text" name="trade_price" required>
+                                            </div>
+                                            <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold; "> +VAT= </label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12">
+                                                <input id="TradeTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="trade_vat">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Premium Price <span class="required">*</span></label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
+                                                <input id="PremiumPrice" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="premium_price" required style="text-align:center">
+                                            </div>
+                                            <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12">
+                                                <input id="PremiumTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="premium_vat">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Other Price <span class="required">*</span></label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12" display:inline>
+                                                <input id="OtherPrice" style="text-align:center" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="other_price" required>
+                                            </div>
+                                            <label for="middle-name" class="control-label col-md-2 col-sm-1 col-xs-12" style="text-align: center; font-weight: bold"> +VAT= </label>
+                                            <div class="col-md-2 col-sm-3 col-xs-12">
+                                                <input id="OtherTotal" style="text-align:center" class="form-control col-md-7 col-xs-12" type="text" name="other_vat">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Quantity </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="quantity">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Warn Level </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="warn_level">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Barcode </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="barcode">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Supplier Name </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select name="supplier_name" required class="form-control chzn-select col-md-7 col-xs-12">
+                                                    <option value="">Please select any </option>
+                                                    @foreach (var v in Model)
+                                                    {
+                                                        <option value="@v.Id">@v.sales_contact_name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Supplier Code <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="supplier_code" required>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Cost Price </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="cost">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Categories </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12" style="display:inline">
+                                                <select name="categoryname" required class="form-control chzn-select col-md-7 col-xs-12">
+                                                    <option value="">Please select any </option>
+                                                    @foreach (var v in ViewBag.Categories)
+                                                    {
+                                                        <option value="@v.Id">@v.category_name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1 col-sm-6 col-xs-12" style="margin-top:4px">
+                                                <a href="#"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Courier Type </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="courier_type">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Tax Type </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="tax_type">
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Note </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="notes">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="col-md-3 col-sm-6 col-xs-12 "></div>
+                                            <div class="col-md-3 col-sm-6 col-xs-12 ">
+
+                                                <input type="file" name="file" id="file" /> <br />
+
+                                                @*<img src="" width="40" height="40" />*@
+
+                                                @*<input id="middle-name" style="margin-top:5px" class="col-md-12 col-xs-12" type="file" name="image">*@
+                                                @*<input style="margin-top:15px" type="submit" value="Browse" class="btn btn-success" />*@
+                                            </div>
+                                        </div>
+                                        </br>
+                                        <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-3">
+
+                                            <input type="submit" value="Add Product" class="btn btn-success" />
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                                <div class="form-group">
+
+
+                                </div>
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                    <!-- /dashboard content -->
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+
+    <script type="text/javascript" language="javascript">
+
+
+        function Add() {
+            var a, b, c, d;
+            a = parseInt(document.getElementById("NormalPrice").value);
+
+            //
+            // If textbox value is null i.e empty, then the below mentioned if condition will
+            // come into picture and make the value to '0' to avoid errors.
+            //
+            if (isNaN(a) == true) {
+                a = 0;
+            }
+
+            var b = parseInt(document.getElementById("TradePrice").value);
+            if (isNaN(b) == true) {
+                b = 0;
+            }
+
+            var c = parseInt(document.getElementById("PremiumPrice").value);
+            if (isNaN(c) == true) {
+                c = 0;
+            }
+
+            var d = parseInt(document.getElementById("OtherPrice").value);
+            if (isNaN(d) == true) {
+                d = 0;
+            }
+
+
+            document.getElementById("NormalTotal").value = a + ((a * 20) / 100)
+            document.getElementById("TradeTotal").value = b + ((b * 20) / 100)
+            document.getElementById("PremiumTotal").value = c + ((c * 20) / 100)
+            document.getElementById("OtherTotal").value = d + ((d * 20) / 100)
+        }
+
+    </script>
+
+
+
+
+</body>
+<!-- Mirrored from demo.interface.club/limitless/layout_2/LTR/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Feb 2017 12:15:45 GMT -->

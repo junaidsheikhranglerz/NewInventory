@@ -1,0 +1,210 @@
+﻿@model List<Inventory.Models.Supplier>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    @{
+        Html.RenderPartial("_PartialTop");
+    }
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            @{
+                Html.RenderPartial("_PartialSideNavigation");
+            }
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Main charts -->
+                    <!-- /main charts -->
+                    <!-- Dashboard content -->
+                    <div class="row">
+                        <div class="col-lg-12">
+
+
+                            <!--  TABLES  -->
+                            <!-- Marketing TABLES campaigns -->
+                            <div class="panel panel-flat">
+
+
+
+
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap" >
+                                        <thead>
+                                            <tr>
+                                                @*<th width="10%" class="text-bold">Image</th>*@
+                                                <th class="col-md-2"><span class="text-bold">Company Name</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Short Name</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Salesman</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Mobile</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Address</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Status</span></th>
+                                                <th class="text-center"><span class="text-bold">Actions</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var v in Model)
+                                            {
+                                                <tr>
+                                                    @*<td>
+                                                        <div class="media-left media-middle">
+                                                            <a href="#"><img src="~/images/checklist.png" class="img-circle img-xs" alt=""></a>
+                                                        </div>
+                                                        <div class="media-left">
+                                                                <div class=""><a href="#" class="text-default text-semibold">Facebook</a></div>
+                                                            </div>
+                                                    </td>*@
+                                                    <td>@v.company_name</td>
+                                                    <td>@v.company_short_name</td>
+                                                    <td>@v.sales_contact_name</td>
+
+                                                    <td><span class="">@v.sales_contact_mobile</span></td>
+                                                    <td><span class="">@v.address</span></td>
+                                                    
+                                                    @if (@v.is_active == 1)
+                                                    {
+                                                        <td><span class="label bg-blue">Active</span></td>
+                                                    }
+                                                    @if (@v.is_active == 0)
+                                                    {
+                                                        <td><span class="label bg-danger">Deactive</span></td>
+                                                    }
+                                                    
+                                                    <td class="text-center">
+                                                        <ul class="icons-list">
+                                                            <li class="dropdown">
+                                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                                    <li><a href="~/Supplier/Edit/@v.Id"><i class="icon-file-stats"></i> View </a></li>
+                                                                    <li><a href="~/Supplier/Edit/@v.Id"><i class="icon-file-text2"></i> Edit </a></li>
+                                                                    <li><a href="~/Supplier/Delete/@v.Id"><i class="icon-file-locked"></i> Disable </a></li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <!--  TABLES  -->
+                            <!-- /marketing campaigns -->
+                            <!-- Quick stats boxes -->
+                            @*<div class="row">
+                                    <div class="col-lg-4">
+
+                                        <!-- Members online -->
+                                        <div class="panel bg-teal-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <span class="heading-text badge bg-teal-800">+53,6%</span>
+                                                </div>
+
+                                                <h3 class="no-margin">3,450</h3>
+                                                Members online
+                                                <div class="text-muted text-size-small">489 avg</div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <div id="members-online"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /members online -->
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+
+                                        <!-- Current server load -->
+                                        <div class="panel bg-pink-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
+                                                                <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
+                                                                <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
+                                                                <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <h3 class="no-margin">49.4%</h3>
+                                                Current server load
+                                                <div class="text-muted text-size-small">34.6% avg</div>
+                                            </div>
+
+                                            <div id="server-load"></div>
+                                        </div>
+                                        <!-- /current server load -->
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+
+                                        <!-- Today's revenue -->
+                                        <div class="panel bg-blue-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list">
+                                                        <li><a data-action="reload"></a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <h3 class="no-margin">$18,390</h3>
+                                                Today's revenue
+                                                <div class="text-muted text-size-small">$37,578 avg</div>
+                                            </div>
+
+                                            <div id="today-revenue"></div>
+                                        </div>
+                                        <!-- /today's revenue -->
+
+                                    </div>
+                                </div>*@
+                            <!-- /quick stats boxes -->
+
+
+
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                    <!-- /dashboard content -->
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+</body>
+<!-- Mirrored from demo.interface.club/limitless/layout_2/LTR/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Feb 2017 12:15:45 GMT -->
+</html>

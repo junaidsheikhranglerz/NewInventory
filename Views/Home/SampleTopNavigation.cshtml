@@ -1,0 +1,356 @@
+﻿<body>
+
+    @{
+        Html.RenderPartial("_PartialTop");
+    }
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            @{
+                Html.RenderPartial("_PartialSideNavigation");
+            }
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Main charts -->
+                    <!-- /main charts -->
+                    <!-- Dashboard content -->
+                    <div class="row">
+                        <div class="col-lg-12">
+
+
+                            <!--  TABLES  -->
+                            <!-- Marketing TABLES campaigns -->
+                            <div class="panel panel-flat">
+
+
+
+
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>Campaign</th>
+                                                <th class="col-md-2">Client</th>
+                                                <th class="col-md-2">Changes</th>
+                                                <th class="col-md-2">Budget</th>
+                                                <th class="col-md-2">Status</th>
+                                                <th class="text-center" style="width: 20px;">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/facebook.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Facebook</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-blue position-left"></span>
+                                                            02:00 - 03:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">Mintlime</span></td>
+                                                <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i> 2.43%</span></td>
+                                                <td><h6 class="text-semibold">$5,489</h6></td>
+                                                <td><span class="label bg-blue">Active</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/youtube.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Youtube videos</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-danger position-left"></span>
+                                                            13:00 - 14:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">CDsoft</span></td>
+                                                <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i> 3.12%</span></td>
+                                                <td><h6 class="text-semibold">$2,592</h6></td>
+                                                <td><span class="label bg-danger">Deactive</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/spotify.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Spotify ads</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-grey-400 position-left"></span>
+                                                            10:00 - 11:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">Diligence</span></td>
+                                                <td><span class="text-danger"><i class="icon-stats-decline2 position-left"></i> - 8.02%</span></td>
+                                                <td><h6 class="text-semibold">$1,268</h6></td>
+                                                <td><span class="label bg-grey-400">Hold</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/twitter.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Twitter ads</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-grey-400 position-left"></span>
+                                                            04:00 - 05:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">Deluxe</span></td>
+                                                <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i> 2.78%</span></td>
+                                                <td><h6 class="text-semibold">$7,467</h6></td>
+                                                <td><span class="label bg-grey-400">Hold</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/amazon.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Amazon ads</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-danger position-left"></span>
+                                                            18:00 - 19:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">Blueish</span></td>
+                                                <td><span class="text-success-600"><i class="icon-stats-growth2 position-left"></i> 6.79%</span></td>
+                                                <td><h6 class="text-semibold">$1,540</h6></td>
+                                                <td><span class="label bg-blue">Active</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropup">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="media-left media-middle">
+                                                        <a href="#"><img src="assets/images/brands/dribbble.png" class="img-circle img-xs" alt=""></a>
+                                                    </div>
+                                                    <div class="media-left">
+                                                        <div class=""><a href="#" class="text-default text-semibold">Dribbble ads</a></div>
+                                                        <div class="text-muted text-size-small">
+                                                            <span class="status-mark border-blue position-left"></span>
+                                                            20:00 - 21:00
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="text-muted">Teamable</span></td>
+                                                <td><span class="text-danger"><i class="icon-stats-decline2 position-left"></i> 9.83%</span></td>
+                                                <td><h6 class="text-semibold">$8,350</h6></td>
+                                                <td><span class="label bg-danger">Closed</span></td>
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropup">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-file-stats"></i> View statement</a></li>
+                                                                <li><a href="#"><i class="icon-file-text2"></i> Edit campaign</a></li>
+                                                                <li><a href="#"><i class="icon-file-locked"></i> Disable campaign</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="#"><i class="icon-gear"></i> Settings</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            <!--  TABLES  -->
+                            <!-- /marketing campaigns -->
+                            <!-- Quick stats boxes -->
+                            @*<div class="row">
+                                    <div class="col-lg-4">
+
+                                        <!-- Members online -->
+                                        <div class="panel bg-teal-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <span class="heading-text badge bg-teal-800">+53,6%</span>
+                                                </div>
+
+                                                <h3 class="no-margin">3,450</h3>
+                                                Members online
+                                                <div class="text-muted text-size-small">489 avg</div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                <div id="members-online"></div>
+                                            </div>
+                                        </div>
+                                        <!-- /members online -->
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+
+                                        <!-- Current server load -->
+                                        <div class="panel bg-pink-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="#"><i class="icon-sync"></i> Update data</a></li>
+                                                                <li><a href="#"><i class="icon-list-unordered"></i> Detailed log</a></li>
+                                                                <li><a href="#"><i class="icon-pie5"></i> Statistics</a></li>
+                                                                <li><a href="#"><i class="icon-cross3"></i> Clear list</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <h3 class="no-margin">49.4%</h3>
+                                                Current server load
+                                                <div class="text-muted text-size-small">34.6% avg</div>
+                                            </div>
+
+                                            <div id="server-load"></div>
+                                        </div>
+                                        <!-- /current server load -->
+
+                                    </div>
+
+                                    <div class="col-lg-4">
+
+                                        <!-- Today's revenue -->
+                                        <div class="panel bg-blue-400">
+                                            <div class="panel-body">
+                                                <div class="heading-elements">
+                                                    <ul class="icons-list">
+                                                        <li><a data-action="reload"></a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <h3 class="no-margin">$18,390</h3>
+                                                Today's revenue
+                                                <div class="text-muted text-size-small">$37,578 avg</div>
+                                            </div>
+
+                                            <div id="today-revenue"></div>
+                                        </div>
+                                        <!-- /today's revenue -->
+
+                                    </div>
+                                </div>*@
+                            <!-- /quick stats boxes -->
+
+
+
+
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                        </div>
+                    </div>
+                    <!-- /dashboard content -->
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+</body>
+<!-- Mirrored from demo.interface.club/limitless/layout_2/LTR/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Feb 2017 12:15:45 GMT -->
