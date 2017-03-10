@@ -3045,8 +3045,8 @@ input[class*=bg-] + .form-control-feedback {
         .sidebar-xs .header-highlight .navbar-header .navbar-brand {
             padding-left: 0;
             padding-right: 0;
-            background: url(../images/logo_icon_light.png) center center no-repeat;
-            background-size: auto 16px;
+            background: url(../../../images/LogoS.png) center center no-repeat;
+            /*background-size: auto 16px;*/
             float: none;
             display: block;
         }
@@ -3176,8 +3176,11 @@ input[class*=bg-] + .form-control-feedback {
 }
 
 .navbar-brand > img {
-    margin-top: 2px;
-    height: 16px;
+    margin-top: -7px;
+    
+
+    /*margin-top: 2px;
+    height: 16px;*/
 }
 
 .navbar-nav {
