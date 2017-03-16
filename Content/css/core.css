@@ -5794,7 +5794,7 @@ a.list-group-item-danger, button.list-group-item-danger {
 .panel {
     margin-bottom: 20px;
     border-color: #ddd;
-    color: #333;
+    /*color: #333;*/
 }
 
     .panel.has-scroll {
