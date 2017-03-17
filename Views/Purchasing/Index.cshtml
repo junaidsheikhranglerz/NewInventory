@@ -1,0 +1,146 @@
+﻿<body class="nav-md">
+
+
+    @{
+        Html.RenderPartial("_PartialTop");
+    }
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            @{
+                Html.RenderPartial("_PartialSideNavigation");
+            }
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="background:#FFF">
+                            <div class="row">
+                                <div class="col-md-4 pull-left" style="margin-top:5px">
+                                    <span style="font-size:20px">New Purchasing Order <small></small></span>
+                                </div>
+
+
+                                <div style="float:right;text-align:right;line-height:30px;margin:13px 0 10px 0">
+                                    @*Filter Supplier - <input style="margin-right:83px;" type="checkbox" id="sup_filter" checked="true"><br>*@
+
+                                    <span class="po_no"></span> Number - <input id="document_number" type="text" class="form-control pull-right" value="1" readonly="" style="width: 110px; height: 29px; margin-right: 5px; text-align: center; "><br>
+                                    Date - <input id="document_number" type="text" class="form-control pull-right" value="@DateTime.Now.ToString("MM/dd/yyyy")" readonly="" style="width: 110px; height: 29px; margin-right: 5px; text-align: center;"><br>
+                                    Request Person - <input id="document_number" type="text" class="form-control pull-right" value="Junaid Sheikh" readonly="" style="width: 110px; height: 29px; margin-right: 5px; text-align: center; "><br>
+                                    <span id="payment_wrapper">
+                                        Payment Method - <select id="payment_method" class="form-control pull-right" style="width: 110px; height: 29px; margin-right: 5px; text-align: center; margin-left: 3px" onchange="">
+                                            <option value="Cash">Cash</option>
+                                            <option value="Card">Card</option>
+                                            <option value="Bank Transfer">Bank Transfer</option>
+                                            <option value="Paypal">Paypal</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </span>
+                                </div>
+
+                                @*<div class="col-md-4 pull-right">
+                        <div class="form-group" style="float: right; margin-top:5px">
+                            <label for="middle-name" class="control-label col-md-7 col-sm-3 col-xs-12" style="/* font-weight: bold; */margin-top: 3px;text-align: right;">Number</label>
+                            <div class="col-md-5 col-sm-3 col-xs-12 pull-right" display:inline="">
+                                <input id="NormalPrice" style="text-align:center;height: 25px;" value="" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" readonly="">
+                            </div>
+                        </div>
+                        <div class="form-group" style="float: right">
+                            <label for="middle-name" class="control-label col-md-7 col-sm-3 col-xs-12" style="/* font-weight: bold; */margin-top: 3px;text-align: right;">Date</label>
+                            <div class="col-md-5 col-sm-3 col-xs-12 pull-right" display:inline="">
+                                <input id="NormalPrice" style="text-align:center;height: 25px;" value="" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" readonly="">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12" style="float: right">
+                            <label for="middle-name" class="control-label col-md-7 col-sm-3 col-xs-12" style="/* font-weight: bold; */margin-top: 3px;text-align: right;">Requested Person</label>
+                            <div class="col-md-5 col-sm-3 col-xs-12 pull-right" display:inline="">
+                                <input id="NormalPrice" style="text-align:center;height: 25px;" value="" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" readonly="">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="float: right">
+                            <label for="middle-name" class="control-label col-md-7 col-sm-3 col-xs-12" style="/* font-weight: bold; */margin-top: 3px;text-align: right;">Payment Method</label>
+                            <div class="col-md-5 col-sm-3 col-xs-12 pull-right" display:inline="">
+                                <input id="NormalPrice" style="text-align:center;height: 25px;" value="" onkeyup="javascript:Add();" class="form-control col-md-7 col-xs-12" type="text" name="normal_price" readonly="">
+                            </div>
+                        </div>
+                    </div>*@
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="margin-top:20px">
+                            <div class=" panel panel-flat">
+
+                                <div class="table-responsive">
+                                    <table id="purchasing_table" class="table text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                @*<th width="10%" class="text-bold">Image</th>*@
+                                                <th class="col-md-2"><span class="text-bold">Code</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Supplier Code</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Description</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Quantity</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Price</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Price+VAT</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Total</span></th>
+                                                <th class="col-md-2"><span class="text-bold">Total+VAT</span></th>
+                                                <th class="text-center"><span class="text-bold">Actions</span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr>
+                                                <td>GOOD</td>
+                                                <td>GOOD</td>
+                                                <td>GOOD</td>
+
+                                                <td><span class="">GOOD</span></td>
+                                                <td><span class="">GOOD</span></td>
+                                                <td><span class="">GOOD</span></td>
+                                                <td><span class="">GOOD</span></td>
+                                                <td><span class="">GOOD</span></td>
+
+                                                @*@if (true)
+                    {
+                        <td><span class="label bg-blue">Active</span></td>
+                    }
+                    @if (false)
+                    {
+                        <td><span class="label bg-danger">Deactive</span></td>
+                    }*@
+
+                                                <td class="text-center">
+                                                    <ul class="icons-list">
+                                                        <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                                <li><a href="~/Purchasing/Add/"><i class="icon-file-text2"></i> Add </a></li>
+                                                                <li><a href="~/Purchasing/Delete"><i class="icon-file-locked"></i> Delete </a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+
+            </div>
+        </div>
+</body>
