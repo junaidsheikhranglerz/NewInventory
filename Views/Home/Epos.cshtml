@@ -1,0 +1,126 @@
+﻿<body id="body-index">
+    <div id="sticky-footer-wrap">
+
+        @*-----------------Top Navigation Start---------------*@
+
+        @{
+            Html.RenderPartial("Top_Navigation_View");
+        }
+
+        @*-----------------Top Navigation End---------------*@
+
+        <div class="container-fluid main-container">
+
+            @*-----------------Side Navigation Start---------------*@
+            <div class="row">
+                @{
+                    Html.RenderPartial("Side_Navigation_View");
+                }
+                @*-----------------Side Navigation End---------------*@
+
+
+
+                @*-----------------Main Container Start---------------*@
+                <div class="container-fluid content-wrapper col-md-9 col-sm-11 col-xs-10">
+
+
+                    <div style="margin-top:50px">
+
+                        <div class="row">
+                            <div class="col-md-offset-2 col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/new_sale.png"></span>
+                                    <span><br /><b>New Sale</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/sale_report.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Sales Report</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/check.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Check Prices</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/customer_list.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Customer List</b></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-top:25px">
+                            <div class="col-md-offset-2 col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/manage_stock.png"></span>
+                                    <span><br /><b>Manage Stock</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/low_stock.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Low Stock</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/purchase_order.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Purchase Order</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/po_report.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>PO Reports</b></span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top:25px">
+                            <div class="col-md-offset-2 col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/suplier_list.png"></span>
+                                    <span><br /><b>Supplier List</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/cofigar.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Config</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/data_report.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Data Report</b></span>
+                                </a>
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <a href="#">
+                                    <span class="box"><img src="~/img/page_icons/sale_report.png"></span>
+                                    <span class="hidden-sm hidden-xs"><br /><b>Credit Report</b></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                @*-----------------Main Container Ends---------------*@
+            </div>
+            <div id="sticky-footer-push"></div>
+        </div>
+    </div>
+
+    <footer class="black">
+
+        @{
+            Html.RenderPartial("Footer_View");
+        }
+    </footer>
+</body>

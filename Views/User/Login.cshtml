@@ -1,0 +1,74 @@
+﻿@*<body id="body-index">
+    <div id="sticky-footer-wrap">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="black">
+                <div class="container-fluid">
+                    <div class="col-md-4">
+                        <img src="~/img/logo/esales_top.png" />
+                    </div>
+
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-6 col-xs-12">
+
+                        <form  class="form-inline invoice-form" method="post" action="@Url.Action("Index","Home")"  style="float:right">
+                            <div class="form-group" style="margin-top: 20px;">
+                                <label class="control-label" style="color:#FFF">Remember me</label>
+                                <input id="remember_me" value="true" checked type="checkbox">
+                            </div>
+                            <div class="form-group">
+
+                                <label class="control-label" style="color:#FFF;">Username</label>
+                                <div class="clearfix"></div>
+
+                                <input id="username" class="form-control" type="text" name="username" placeholder="Username" required title="admin" style="width:120px">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" style="color:#FFF">Password</label>
+                                <div class="clearfix"></div>
+
+                                <input id="password" class="form-control" type="password" name="password" placeholder="Password" required title="admin" style="width:120px">
+
+                                <input type="submit" value="Login" class="btn btn-primary" />
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <img src="~/img/banner1.png" width="100%" />
+            </div>
+
+        </div>
+        <div class="container-fluid main-container">
+            <div class="row">
+                <div class="sidebar col-md-2 col-sm-1 col-xs-2 no-margin">
+
+                </div>
+
+            </div>
+        </div>
+        <div id="sticky-footer-push"></div>
+    </div>
+    <!-- Footer -->
+    <footer class="black">
+
+        @{
+            Html.RenderPartial("Footer_View");
+        }
+    </footer>
+    <!-- Javascript -->
+    <!-- Sparklines -->
+   
+</body>
+<!-- Mirrored from radmin.squareturtle.com/1.1.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 10:09:05 GMT -->
+</html>*@

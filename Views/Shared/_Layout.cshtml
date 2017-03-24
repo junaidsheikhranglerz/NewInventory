@@ -1,39 +1,157 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CCTV System</title>
+    <title>eSalesPro</title>
+    <meta name="description" content="An admin template from Square Turtle Studios">
+    <meta name="author" content="Square Turtle Studios">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/core.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/components.css" rel="stylesheet" type="text/css">
-    <link href="~/Content/css/colors.css" rel="stylesheet" type="text/css">
-    <!-- /global stylesheets -->
-    <!-- Core JS files -->
-    <script type="text/javascript" src="~/Scripts/js/plugins/loaders/pace.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/core/libraries/jquery.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/core/libraries/bootstrap.min.js"></script>
-    @*<script type="text/javascript" src="~/Scripts/js/plugins/loaders/blockui.min.js"></script>*@
-    <!-- /core JS files -->
-    <!-- Theme JS files -->
-    <script type="text/javascript" src="~/Scripts/js/plugins/visualization/d3/d3.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/visualization/d3/d3_tooltip.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/forms/styling/switchery.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/forms/styling/uniform.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/ui/moment/moment.min.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/plugins/pickers/daterangepicker.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/core/app.js"></script>
-    <script type="text/javascript" src="~/Scripts/js/pages/dashboard.js"></script>
+    <!-- Styles -->
+    <!-- Logo Font - Molle -->
+    <link href="~/css/molle.css" rel="stylesheet" type="text/css">
 
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/icon-style.css" rel="stylesheet" />
+    <!--[if lte IE 7]><script src="../scripts/lte-ie7.js"></script><![endif]-->
+    <link href="~/css/radmin.css" rel="stylesheet" id="main-stylesheet">
+    <link href="~/css/radmin-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/css/radmin-plugins.css" />
+
+    <script type="text/javascript" src="~/code.jquery.com/jquery-1.10.0.min.js"></script>
+
+    <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/jquery.min.html"><\/script>')</script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+
+
+    @*<script type="text/javascript" src="~/scripts/jquery.cloneposition.js"></script>*@
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <script src="scripts/respond.js" type="text/javascript"></script>
+    <link href="css/radmin-ie8.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <script src="scripts/placeholder.js" type="text/javascript"></script>
+    <![endif]-->
+    @*<script type="text/javascript" src="~/scripts/theme.js"></script>*@
+    
+
+
+
+    @*<script type="text/javascript" src="~/scripts/sparkline.js"></script>*@
+    @*<script type="text/javascript" src="~/scripts/flot/jquery.flot.js"></script>
+      <script type="text/javascript" src="~/scripts/flot/jquery.flot.time.js"></script>
+      <script type="text/javascript" src="~/scripts/flot/jquery.flot.resize.js"></script>
+      <script type="text/javascript" src="~/scripts/charts.js"></script>*@
+    <script type="text/javascript">
+        switcher_div = $('#color-switcher');
+        switcher_control = $('#color-switcher-control');
+
+        function get_flot_colors() {
+            if (radmin_current_theme === 'pink') {
+                return ['#E63E5D', '#97AF22', '#9D3844', '#533436', '#082D35'];
+            } else if (radmin_current_theme === 'green') {
+                return ['#42826C', '#FFC861', '#A5C77F', '#6d9f00', '#002F32'];
+            } else {
+                return ['#49AFCD', '#FF6347', '#38849A', '#BF4A35', '#999', '#555'];
+            }
+
+            return ['#49AFCD', '#FF6347', '#38849A', '#BF4A35', '#999', '#555'];
+        }
+
+        function get_sparkline_colors() {
+            if (radmin_current_theme === 'pink') {
+                return ['#E63E5D', '#97AF22'];
+            } else if (radmin_current_theme === 'green') {
+                return ['#42826C', '#FFC861'];
+            } else {
+                return ['#49AFCD', '#FF6347'];
+            }
+
+            return ['#49AFCD', '#FF6347'];
+        }
+
+        var sparkline_colors = get_sparkline_colors();
+
+        /**
+         *  Jquery Load Event
+         *
+         */
+        jQuery(function ($) {
+            // format date inputs
+            $("a[rel=popover]").popover();
+
+            $('.bar1-sparkline').sparkline([12, 8, 10, 13, 15, -6, -8, 10, 18, 10, -8, -7], { type: 'bar', barColor: sparkline_colors[0], negBarColor: sparkline_colors[1], barWidth: '5', height: '20' });
+
+            $('.bar2-sparkline').sparkline([[5, 6], [7, 9], [9, 5], [6, 2], [10, 4], [6, 7], [5, 4], [6, 7]], { type: 'bar', stackedBarColor: sparkline_colors, barWidth: '5', height: '20' });
+
+            $('.discrete-sparkline').sparkline([12, 11, 13, 14, 13, 12, 11, 12, 13, 14, 15, 16, 15, 14, 13, 14, 15, 16, 17, 18, 17, 16, 17], { type: 'discrete', lineColor: sparkline_colors[0], height: '20' });
+
+            $('.line-sparkline').sparkline([12, 11, 13, 14, 13, 12, 11, 12, 13, 14, 15, 16, 15, 14, 13, 12, 11, 12, 13, 14, 15, 16, 17, 18], { type: 'line', lineColor: sparkline_colors[0], fillColor: sparkline_colors[0], height: '20' });
+
+            $('#user-popover').popover();
+
+            /**
+             * Sets active and expands menu items based on id of body tag of current page
+             * e.g. <body id="body-index-page"> will result in the menu item with the id="navigation-index-page" having the
+             * class 'active' added, subsequently it will look for a child div with a class of collapse and add the class 'in'
+             * and set the height to auto
+             */
+            var body_id = $('body').attr('id');
+            if (body_id != null) {
+                var nav_element = $('#navigation-' + body_id.replace('body-', ''));
+                nav_element.addClass('active');
+                if (nav_element.has('div.collapse')) {
+                    var child_nav = nav_element.find('div.collapse');
+                    child_nav.addClass('in');
+                    child_nav.css('height: auto;');
+
+                }
+
+            }
+
+            //hide the top-stats when the arrow is clicked
+            var item = $('.top-stats');
+            var target = $('#hide-top-stats');
+            if (item.length > 0 && target.length > 0) {
+                target.on('click', function () {
+                    item.css('position', 'relative');
+                    switcher_div.hide();
+                    item.animate({
+                        left: '-=1200',
+                    }, 1000, function () {
+                        // Animation complete.
+                        item.hide('slow');
+                    });
+                });
+            }
+
+            //display the color-switcher and change theme (plus anything with comments of //used in theming logic )
+            position_color_switcher(true);
+            switcher_div.show();
+
+            switcher_control.on('click', toggle_color_switcher);
+
+            $(window).resize(function () {
+                switcher_div.hide();
+            });
+
+            $('.color-switcher-color').bind('click', set_theme_url);
+
+
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            flot_sin_cos('flot-line-graph', flot_options_sin_cos);
+        });
+    </script>
 </head>
 <body>
     @RenderBody()

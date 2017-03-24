@@ -1,0 +1,103 @@
+﻿<script>
+
+    function startTime() {
+
+        alert("Start Time")
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time_').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+</script>
+
+<body id="body-index">
+
+    <div id="sticky-footer-wrap">
+
+        @*-----------------Top Navigation Start---------------*@
+
+        @{
+            Html.RenderPartial("Top_Navigation_View");
+        }
+
+        @*-----------------Top Navigation End---------------*@
+
+        <div class="container-fluid main-container">
+
+            @*-----------------Side Navigation Start---------------*@
+            <div class="row">
+                @{
+                    Html.RenderPartial("Side_Navigation_View");
+                }
+                @*-----------------Side Navigation End---------------*@
+
+
+
+                @*-----------------Main Container Start---------------*@
+                
+                <div class="container-fluid content-wrapper col-md-9 col-sm-11 col-xs-10">
+                    <div style="margin-top:30px">
+
+                        @*<h3 id="time_"></h3>*@
+                        <div class="title" style=""><span style="margin-left:15px">Attendance Logging</span></div>
+                        <div class="space">
+                            <div class="row">
+                                <div class="col-md-12" style="margin:30px 0 40px 0">
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-3">
+                                        @*<a class="btn btn-primary btn-lg">Clock In</a>*@
+
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Clock In</div></a>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Clock Out</div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Tea Break</div></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Lunch Break</div></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Second Tea Break</div></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="margin:20px 0 20px 0">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-2">
+                                        <h3 class="reveal hd1" id="time_" style="text-align:center;"></h3>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @*-----------------Main Container Ends---------------*@
+            </div>
+            <div id="sticky-footer-push"></div>
+        </div>
+    </div>
+
+    <footer class="black">
+
+        @{
+            Html.RenderPartial("Footer_View");
+        }
+    </footer>
+
+
+
+</body>

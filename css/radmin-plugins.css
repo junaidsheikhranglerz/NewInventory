@@ -1,0 +1,162 @@
+/*
+ * Radmin Plugin's Stylesheet
+ */
+
+
+/* FullCalendar
+------------------------------------------------------------------------*/
+
+.fc-toolbar {
+  padding: 15px 15px 5px;
+  border-top: 1px solid #DDD;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #DDD;
+  margin-bottom: 0 !important;
+}
+
+.fc table {
+  width: 99.9% !important;
+}
+
+.fc-event {
+	background: rgb(73,175,205);
+	border: none;
+	padding: 2px 3px;
+}
+
+.fc-unthemed .fc-today {
+	background-color: #d7e6e8;
+}
+
+.fc-icon {
+	font-family: Monaco, monospace;
+}
+
+.fc-state-default {
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat-x;
+  box-shadow: none;
+  color: #333333;
+  text-shadow: none;
+}
+.fc-state-default {
+  border: 1px solid;
+}
+.fc-button {
+  color: inherit;
+  border: 1px solid #e7eaec;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.9em;
+  line-height: 1.9em;
+  overflow: hidden;
+  padding: 0 0.6em;
+  position: relative;
+  white-space: nowrap;
+}
+.fc-state-active {
+  background-color: rgb(73,175,205);
+  border-color: rgb(73,175,205);
+  color: #ffffff;
+}
+.fc-header-title h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: inherit;
+}
+.fc-content .fc-widget-header,
+.fc-content .fc-widget-content {
+  border-color: #e7eaec;
+  font-weight: normal;
+}
+.fc-border-separate tbody {
+  background-color: #F8F8F8;
+}
+.fc-state-highlight {
+  background: none repeat scroll 0 0 #FCF8E3;
+}
+.external-event {
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.fc-ltr .fc-event-hori.fc-event-end,
+.fc-rtl .fc-event-hori.fc-event-start {
+  border-radius: 2px;
+}
+.fc-event,
+.fc-agenda .fc-event-time,
+.fc-event a {
+  padding: 4px 6px;
+  background-color: rgb(73,175,205);
+  /* background color */
+  border-color: rgb(73,175,205);
+  /* border color */
+}
+.fc-event-time,
+.fc-event-title {
+  color: #717171;
+  padding: 0 1px;
+}
+.ui-calendar .fc-event-time,
+.ui-calendar .fc-event-title {
+  color: #fff;
+}
+
+/* Sparklines 
+------------------------------------------------------------------------*/
+
+ul.stats-sparkline {
+	list-style: none;
+	text-align: center;
+	margin-top: 5px;
+}
+
+ul.stats-sparkline li {
+	display: inline-block;
+	background: none repeat scroll 0 0 #515151;
+	border: 1px solid #111;
+	padding: 5px;
+	margin: 0 10px;
+	min-width: 100px;
+	color: #CCC;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 0 rgba(255, 255, 255, 0.15);
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+ul.stats-sparkline li span.sparkline-text {
+	display: inline-block;
+	padding-left: 3px;
+}
+
+.jqstooltip {
+   -webkit-box-sizing: content-box;
+   -moz-box-sizing: content-box;
+   box-sizing: content-box;
+}
+
+/* FlotCharts 
+------------------------------------------------------------------------*/
+
+.graph, .pie, .chart {
+	height: 300px;
+	max-width: 100%;
+}
+
+/* DatePicker & ColorPicker 
+------------------------------------------------------------------------*/
+
+	/* IE 8 Specific Hackery */
+
+div.input-append.date input, div.input-append.color input {
+	min-height: 20px\9;
+}
+
+div.input-append span.add-on {
+	border-radius: 0 4px 4px 0\9;
+}
+	
+	

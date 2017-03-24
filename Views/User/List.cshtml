@@ -1,0 +1,126 @@
+﻿@model List<eSalesManager.Models.User>
+<body id="body-index">
+    <div id="sticky-footer-wrap">
+
+        @*-----------------Top Navigation Start---------------*@
+
+        @{
+            Html.RenderPartial("Top_Navigation_View");
+        }
+
+        @*-----------------Top Navigation End---------------*@
+
+        <div class="container-fluid main-container">
+
+            @*-----------------Side Navigation Start---------------*@
+            <div class="row">
+                @{
+                    Html.RenderPartial("Side_Navigation_View");
+                }
+                @*-----------------Side Navigation End---------------*@
+
+
+
+                @*-----------------Main Container Start---------------*@
+                <div class="container-fluid content-wrapper col-md-9 col-sm-11 col-xs-10">
+                    <div class="x_title">
+                        <h3>Create User <small></small></h3>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <section id="no-more-tables">
+                        <table class="table">
+                            <thead>
+                                <tr style="color:#0094ff; font-size:15px">
+                                    <th>Full Name</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Phone</th>
+                                    <th>Pay Rate</th>
+                                    <th>Role</th>
+
+                                    <th class="text-center">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var v in Model)
+                                {
+                                    <tr>
+                                        <td data-title="User ID">@v.full_name</td>
+                                        <td data-title="First Name">@v.username</td>
+                                        <td data-title="Last Name">@v.password</td>
+                                        <td data-title="Email" class="user-emails">@v.phone</td>
+                                        <td data-title="Date Registered">@v.pay_rate</td>
+                                        <td data-title="Date Registered">@v.role</td>
+                                        <td data-title="Actions" class="text-center buttons-block">
+                                            <a class="btn btn-default btn-sm" href="#">
+                                                <i class="icon-edit"></i>
+                                                Edit
+                                            </a>
+                                            <a class="btn btn-sm btn-info" href="#">
+                                                <i class="icon-user icon-white"></i>
+                                                Login As
+                                            </a>
+                                            <a class="btn btn-sm btn-danger" href="#">
+                                                <i class="icon-trash icon-white"></i>
+                                                Delete
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </section>
+
+                    @*----------------Pages Numbering Starts---------------
+                    <nav>
+
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    --------------Pages Numbering Ends------------*@
+                </div>
+                @*-----------------Main Container Ends---------------*@
+            </div>
+
+
+
+            <div id="sticky-footer-push"></div>
+        </div>
+    </div>
+
+    <footer class="black">
+
+        @{
+            Html.RenderPartial("Footer_View");
+        }
+    </footer>
+</body>

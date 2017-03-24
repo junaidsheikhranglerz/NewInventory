@@ -1,0 +1,177 @@
+﻿<body id="body-index">
+    <div id="sticky-footer-wrap">
+
+        @*-----------------Top Navigation Start---------------*@
+
+        @{
+            Html.RenderPartial("Top_Navigation_View");
+        }
+
+        @*-----------------Top Navigation End---------------*@
+
+        <div class="container-fluid main-container">
+
+            @*-----------------Side Navigation Start---------------*@
+            <div class="row">
+                @{
+                    Html.RenderPartial("Side_Navigation_View");
+                }
+                @*-----------------Side Navigation End---------------*@
+
+
+
+                @*-----------------Main Container Start---------------*@
+                <div class="container-fluid content-wrapper col-md-9 col-sm-11 col-xs-10">
+                    <div class="x_title">
+                        <h3>Create User <small></small></h3>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+
+                    <form id="demo-form2" action="~/User/Create" method="post" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Full Name <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="full_name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Display Name<span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="display_name" required>
+                            </div>
+                        </div>
+
+
+                      
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Address <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Postcode<span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="postcode">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Phone <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="barcode_code" class="form-control col-md-7 col-xs-12" type="text" name="phone" required>
+                            </div>
+                        </div>
+
+
+                        
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Emergency No. <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="emergency_contact">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Pay Rate<span class="required">*</span> </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="pay_rate" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Role <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12" style="display:inline">
+                                <select name="categoryname" required class="form-control chzn-select col-md-7 col-xs-12">
+                                    <option value="">Please select any </option>
+                                    <option value="">Admin </option>
+                                    <option value="">User </option>
+                                    
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Username <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Password <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Confirm Password <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="confirm_password">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Tax Code <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="tax_code">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">NI Number <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="ni_number">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="middle-name" class="control-label col-md-offset-1 col-md-2 col-sm-3 col-xs-12" style="font-weight: bold;">Notes </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="notes">
+                            </div>
+                        </div>
+                       
+                        
+                        <br />
+                        @*<div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-3" style="margin-bottom:15px">
+                            <input type="submit" value="Add Product" class="btn btn-success" />
+                        </div>*@
+                        <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-3">
+                            <input type="submit" value="Add User" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+
+
+
+
+
+                </div>
+                @*-----------------Main Container Ends---------------*@
+            </div>
+            <div id="sticky-footer-push"></div>
+        </div>
+    </div>
+
+    <footer class="black">
+
+        @{
+            Html.RenderPartial("Footer_View");
+        }
+    </footer>
+</body>

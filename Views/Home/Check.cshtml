@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- Mirrored from radmin.squareturtle.com/1.1.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 10:08:42 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <script>
+        function startTime() {
+            //alert("Start Time")
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('time_').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
+    </script>
+
+    <meta charset="utf-8">
+    <title>eSalesPro</title>
+    <meta name="description" content="An admin template from Square Turtle Studios">
+    <meta name="author" content="Square Turtle Studios">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <!-- Logo Font - Molle -->
+    <link href="~/css/molle.css" rel="stylesheet" type="text/css">
+
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/icon-style.css" rel="stylesheet" />
+    
+    <link href="~/css/radmin.css" rel="stylesheet" id="main-stylesheet">
+    <link href="~/css/radmin-responsive.css" rel="stylesheet">
+
+    <script type="text/javascript" src="~/code.jquery.com/jquery-1.10.0.min.js"></script>
+
+    <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/jquery.min.html"><\/script>')</script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/css/radmin-plugins.css" />
+
+</head>
+<body id="body-index" onload="startTime()">
+    <div id="sticky-footer-wrap">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="black">
+                <div class="container-fluid">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <img src="~/img/esales.png" />
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+            </div>
+
+        </div>
+        <div class="container-fluid main-container">
+            <div class="row">
+                
+                <div class="container-fluid content-wrapper col-md-9 col-sm-11 col-xs-10">
+                    <div style="margin-top:30px">
+
+                        @*<h3 id="time_"></h3>*@
+                        <div class="title" style=""><span style="margin-left:15px">Attendance Logging</span></div>
+                        <div class="space">
+                            <div class="row">
+                                <div class="col-md-12" style="margin:30px 0 40px 0">
+                                    <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-3">
+                                        @*<a class="btn btn-primary btn-lg">Clock In</a>*@
+
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Clock In</div></a>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Clock Out</div></a>
+                                    </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Tea Break</div></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Lunch Break</div></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="#"><div class="reveal hd1" style="text-align:center;">Start Second Tea Break</div></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="margin:20px 0 20px 0">
+                                    <div class="col-md-5"></div>
+                                    <div class="col-md-2">
+                                        <h3 class="reveal hd1" id="time_" style="text-align:center;"></h3>
+                                    </div>
+                                    <div class="col-md-5"></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                      
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="sticky-footer-push"></div>
+    </div>
+    <!-- Footer -->
+    <footer class="black">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-8 text-center phone-text-center square-turtle">
+                    <p>2017 &copy; Powered by - <a href="http://www.ranglerz.com/" target="_blank">Ranglerz Digital Marketing</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <!-- Javascript -->
+    <!-- Sparklines -->
+    @*<script type="text/javascript" src="~/scripts/sparkline.js"></script>*@
+</body>
+
+<!-- Mirrored from radmin.squareturtle.com/1.1.0/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2017 10:09:05 GMT -->
+</html>
